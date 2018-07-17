@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link rel="stylesheet" href="/static/css/theme/{{ blog.theme }}">
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.css">
+    <script src="/static/js/jquery.js"></script>
+    <script src="/static/bootstrap/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="/static/css/article_detail.css">
+    <link rel="icon" href="/static/img/favicon.ico" type="image/x-icon">
+</head>
+<body>
+<div class="header">
+    <p class="title">{{ blog.title }}</p>
+</div>
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-3">
+            {% load my_tags %}
+
+            {% get_query_data username %}
+
+        </div>
+        <div class="col-md-9">
+
+            {% block content %}
+
+            {% endblock %}
+        </div>
+    </div>
+</div>
+</body>
+</html>
